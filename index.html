@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA CALCULATOR</title>
+    <style>
+        table, th, td {
+         border:4px double black;
+         border-collapse: collapse ;
+        }
+        #heading{
+        text-decoration:underline;
+        color: black;
+        }
+    </style>
+</head>
+<body style="text-align:left; background-color:lightskyblue; color:black    ;">
+    <h1 id="heading">CGPA CALCULATOR</h1>
+    <form>
+        <label for="SUBJECT_1">SUBJECT_1::</label>
+        <input type="text" id="SUBJECT_1" name="SUBJECT_1"><br><br>
+        <label for="SUBJECT_2">SUBJECT_2::</label>
+        <input type="text" id="SUBJECT_2" name="SUBJECT_2"><br><br>
+        <label for="SUBJECT_3">SUBJECT_3::</label>
+        <input type="text" id="SUBJECT_3" name="SUBJECT_3"><br><br>
+        <label for="SUBJECT_4">SUBJECT_4::</label>
+        <input type="text" id="SUBJECT_4" name="SUBJECT_4"><br><br>
+        <label for="SUBJECT_5">SUBJECT_5::</label>
+        <input type="text" id="SUBJECT_5" name="SUBJECT_5"><br><br>
+        <label for="SUBJECT_6">SUBJECT_6::</label>
+        <input type="text" id="SUBJECT_6" name="SUBJECT_6"><br><br>
+        <label for="gpa">GPA::::::::::::::</label>
+        <input type="text" id="GPA" name="GPA"><br><br>
+        <input  type="button" id="btn" onclick="func()" value="Submit">
+    </form>
+    <br>
+    <table style="width: 2%;">
+        <tr>
+        <th>GPA</th>
+        <th>CGPA</th>
+        <th>GRADE</th>
+        </tr>
+        <tr>
+
+            <td><h3 id="demo"></h3></td>
+            <td><h3 id="demo1"></h3></td>
+            <td><h3 id="demo2"></h3></td>
+        </tr>
+    </table>
+  
+    <script>
+        function func(){
+            let a=document.getElementById("SUBJECT_1");
+            let b=document.getElementById("SUBJECT_2");
+            let c=document.getElementById("SUBJECT_3");
+            let d=document.getElementById("SUBJECT_4");
+            let e=document.getElementById("SUBJECT_5");
+            let f=document.getElementById("SUBJECT_6");
+            let g=document.getElementById("GPA");
+            let j=parseInt(document.getElementById("GPA").value);
+            let h=(parseInt(a.value)+parseInt(b.value)+parseInt(c.value)+parseInt(d.value)+parseInt(e.value)+parseInt(f.value)+parseInt(g.value))/7;
+            document.getElementById("demo").innerHTML = (+h);
+             let i=(h+j)/2;
+            document.getElementById("demo1").innerHTML = (+i);
+        if(i>9){
+        document.getElementById("demo2").innerHTML = (" O");
+        }
+        else if(i>8){
+        document.getElementById("demo2").innerHTML = (" A");
+        }
+        else if(i>7){
+        document.getElementById("demo2").innerHTML = (" B");
+        }
+        else if(i>6){
+        document.getElementById("demo2").innerHTML = (" C");
+        }
+        else if(i>5){
+        document.getElementById("demo2").innerHTML = (" D");
+        }
+   }
+    </script>
+</body>
+</html>
